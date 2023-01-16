@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="AP" content="Formulário Configuração AP Teste" />
+    <meta name="description" content="Formulário Configuração AP Teste" />
+    <meta name="keywords" content="Html, Css, formulários, formulários html" />
+    <meta name="author" content="Carlos André Ferreira" />
+    <meta http-equiv="content-language" content="pt-pt" />
+    <meta name="robots" content="index, follow" />
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+
+
+    <title>Formulário Configuração Activity Provider </title>
+
+</head>
+
+<body>
+
+    <header class="main_header container">
+        <div class="content">
+
+            <div class="main_header_logo">
+                <img src="#" alt="logo.png" title="Logótipo Invenira" />
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main_content container">
+
+        <section class="section-seu-codigo container">
+
+            <div class="content">
+
+                <h1 class="section_title"></i> Formulário Configuração Inven!ra</h1>
+
+                <div class="box-artigo">
+
+                    <div class="formularioContato">
+
+                        <form action="#" method="post" enctype="multipart/form-data">
+
+                            <label>
+                                <span>Nome Questionário</span>
+                                <input type="text" name="questionario" required="">
+                            </label>
+                            <label>
+                                <span>Instruções Questionário</span>
+                                <input type="text" name="instrucoes" required="">
+                            </label>
+
+                            <label>
+                                <span>Categorias</span>
+                                <select name="categorias" id="cat">
+                                    <option value="select">Escolha uma opção:</option>
+                                    <option value="Turismo">Turismo</option>
+                                    <option value="Sustentabilidade">Sustentabilidade</option>
+                                    <option value="Pegada Carbono">Pegada Carbono</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </label>
+                          
+                            <label>
+                                <span>Questões de </span><span id="cat_id"></span>
+                                <textarea id="quest" name="questoes" rows="4" required="" placeholder=""></textarea>
+                            </label>
+                            
+                            <label>
+                                <span>Respostas Corretas</span>
+                                <textarea name="questoescert" rows="3" required=""></textarea>
+                            </label>
+                            <label>
+                                <span>Respostas Erradas</span>
+                                <textarea name="questoeserr" rows="3" required=""></textarea>
+                            </label>
+                            <label>
+                                <span>Respostas Feedback</span>
+                                <textarea name="questoesfeed" rows="3" required=""></textarea>
+                            </label>
+
+                            <input type="hidden" name="acao" value="enviar" />
+                            <button class="btn-envia" title="Enviar">Enviar</b></button>
+
+
+                        </form>
+
+                    </div><!--Formulario Contato-->
+                </div>
+
+
+                <div class="clear"></div>
+            </div>
+        </section><!--FECHA BOX HTML-->
+
+    </main>
+
+    <footer class="main_footer container">
+        <div class="main_footer_copy">
+
+            <p class="m-b-footer">Carlos Ferreira al77895, todos os direitos reservados.</p>
+            <p class="by"><i class="icon icon-heart-3"></i> Desenvolvido por: Carlos Ferreira</p>
+
+        </div>
+    </footer>
+    <style>
+        .content {
+            float: left;
+            width: 92%;
+            margin: 0 4%;
+            padding: 20px 0;
+        }
+
+        /*BTN*/
+        .btn-download {
+            background-color: #ee2727;
+            color: #fff;
+            border-radius: 50px;
+            font-family: 'open_sansregular';
+            padding: 0.5em 0.8em;
+            display: block;
+            float: none;
+            text-decoration: none;
+            margin: auto;
+            width: 100%;
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .btn-download:hover {
+            background-color: #d00f0f;
+            color: #fff;
+        }
+
+        /*HEADER*/
+        .main_header {
+            background: #ffffff;
+            border-bottom: 1px #f4f4f4 solid;
+            z-index: 1;
+            padding: 0.5em 0em;
+        }
+
+        .main_header .content {
+            float: left;
+            padding: 0px 0;
+        }
+
+        .fixed {
+            display: block;
+            position: fixed;
+            z-index: 9;
+        }
+
+        .main_header_logo {
+            text-align: center;
+            margin: auto;
+            float: none;
+            width: 138px;
+        }
+
+        .main_header_logo img {
+            height: 69px;
+        }
+
+        /*ódigo*/
+        .section-seu-codigo {
+            padding: 10px 0px;
+            background-color: #f4f4f4;
+        }
+
+        .section-seu-codigo .content {
+            float: left;
+            padding: 1em 0;
+        }
+
+        .section_title {
+            width: 100%;
+            float: left;
+            margin-bottom: 1em;
+            font-size: 1.3em;
+            font-weight: 300;
+            text-align: center;
+            border-bottom: 1px #eceaea solid;
+            padding-bottom: 1em;
+        }
+
+        .box-artigo {
+            width: 100%;
+            float: left;
+            padding: 0;
+        }
+
+        /*Formulario*/
+
+        .formularioContato {
+
+            max-width: 600px;
+            height: auto;
+            float: none;
+            margin: auto;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 1px 0px 1.2px 0px #ccc;
+            position: relative;
+        }
+
+        .formularioContato:before {
+
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            border-bottom-color: #fff;
+            content: "";
+            position: absolute;
+            left: 6%;
+            top: -4.5%;
+            margin-top: -4px;
+            margin-left: 6px;
+            z-index: 2;
+
+        }
+
+        .formularioContato label {
+
+            float: left;
+            width: 100%;
+            margin-bottom: 1.2em;
+
+        }
+
+        .formularioContato label span {
+
+            width: 100%;
+            float: left;
+            color: #999;
+            margin-bottom: 6px;
+            font-family: 'open_sansregular';
+
+        }
+
+        .formularioContato label input {
+
+            font-size: 1em;
+            color: #555;
+            font-family: 'open_sansregular';
+            outline: none;
+            border: 1px #dee5ed solid;
+            border-radius: 4px;
+            padding: 0.6em;
+            transition: 0.3s;
+
+        }
+
+        .formularioContato label select {
+
+            font-size: 1em;
+            color: #555;
+            border: 1px #dee5ed solid;
+            border-radius: 4px;
+            padding: 0.6em;
+            outline: none;
+            transition: 0.3s;
+
+        }
+
+        .formularioContato label textarea {
+
+            font-size: 1em;
+            color: #555;
+            border: 1px #dee5ed solid;
+            border-radius: 4px;
+            padding: 0.6em;
+            outline: none;
+            transition: 0.3s;
+
+        }
+
+        .formularioContato label input:focus {
+            box-shadow: 0 0 5px 0px rgb(178, 216, 231);
+            border: 1px rgb(37, 174, 230) solid;
+            color: rgb(37, 174, 230);
+        }
+
+        .formularioContato label select:focus {
+            box-shadow: 0 0 5px 0px rgb(178, 216, 231);
+            border: 1px rgb(37, 174, 230) solid;
+        }
+
+        .formularioContato label textarea:focus {
+            box-shadow: 0 0 5px 0px rgb(178, 216, 231);
+            border: 1px rgb(37, 174, 230) solid;
+            color: rgb(37, 174, 230);
+        }
+
+        .formularioContato button.btn-envia {
+
+            background-color: rgb(37, 174, 230);
+            width: 100%;
+            display: block;
+            margin: auto;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 0;
+            padding: 0.8em 0em;
+            color: #fff;
+            font-size: 1.3em;
+            font-family: 'open_sansbold';
+            text-align: center;
+            transition: 0.3s;
+
+        }
+
+        .formularioContato button.btn-envia:hover {
+
+            background-color: #333;
+
+        }
+
+        /*Formulario*/
+
+        /*Seu Download*/
+        .section-seu-download {
+            padding: 10px 0px;
+            background-color: #f4f4f4;
+        }
+
+        .section-seu-download .content {
+            float: left;
+            padding: 1em 0;
+        }
+
+        .box-download {
+            width: 100%;
+            float: left;
+            background: transparent;
+            padding: 1em;
+        }
+
+        /*FOOTER*/
+        .main_footer {
+            background-color: #353535;
+            color: #fff;
+            font-size: 0.875em;
+        }
+
+        .main_footer .content {
+            padding: 3em 0em;
+        }
+
+        .main_footer_copy {
+            background-color: #262626;
+            width: 100%;
+            float: left;
+            text-align: center;
+            padding: 1.5em 0em;
+        }
+
+        .main_footer_copy p {
+            font-family: 'open_sanslight';
+            font-size: 1em;
+            color: #e1e0e0;
+            height: 20px;
+        }
+
+        .main_footer_copy .m-b-footer {
+            margin-bottom: 0.5em;
+        }
+
+        .main_footer_copy .by {
+            font-size: 0.96em;
+        }
+
+        .main_footer_copy .by i {
+            font-size: 0.96em;
+            margin-right: 3px;
+            color: #e82626;
+        }
+
+
+        /*Começa o Responsivo*/
+
+        /*480PX BREAKPOINT*/
+        /*480 dividido por 16 = 30em*/
+        @media (min-width:30em) {
+
+            .boxBannerTopo {
+                padding: 1em 0;
+            }
+
+        }
+
+        /*600PX BREAKPOINT*/
+        /*600 dividido por 16 = 37,5em*/
+        @media (min-width:37em) {}
+
+        /*768PX BREAKPOINT*/
+        /*768 dividido por 16 = 48em*/
+        @media (min-width:48em) {}
+
+        /*960PX BREAKPOINT*/
+        /*960 dividido por 16 = 60em*/
+        @media (min-width:60em) {
+
+            .section-seu-codigo {
+                padding: 20px 0px;
+            }
+
+            .section-seu-codigo .content {
+                width: 80%;
+                padding: 1em 0;
+                margin: 0 10%;
+            }
+
+            .btn-download {
+                width: 35%;
+            }
+
+        }
+
+        /*1280PX BREAKPOINT*/
+        /*1280 dividido por 16 = 80em*/
+        @media (min-width:80em) {}
+
+        /*1366PX BREAKPOINT*/
+        /*1366 dividido por 16 = 85,375em*/
+        @media (min-width:85em) {
+
+            .content {
+                width: 80%;
+                margin: 0 10%;
+            }
+
+        }
+
+        /*1600PX BREAKPOINT*/
+        /*1600 dividido por 16 = 100em*/
+        @media (min-width:100em) {}
+
+        /*Fecha o Responsivo*/
+    </style>
+
+    <!--Implementação do padrão de comportamento OBserver para criar Reaciviade na página de Configuração-->
+    <script>
+        // classe observer
+        class Observable {
+            // cada instância da classe Observer
+            // começa com um array vazio de observadores/observers
+            // que reagem a uma mudança de estado
+            constructor() {
+                this.observers = [];
+            }
+
+            // adicione a capacidade de inscrever um novo objeto / Elemento DOM
+            // essencialmente, adicione algo ao array de observadores
+            subscribe(f) {
+                this.observers.push(f);
+            }
+
+            // adicione a capacidade de cancelar a inscrição de um objeto em particular
+            // essencilamente, remove algum item do array de observadores
+            unsubscribe(f) {
+                this.observers = this.observers.filter(subscriber => subscriber !== f);
+            }
+
+            // atualiza todos os objetos inscritos / Elementos DOM
+            // e passa alguns dados para cada um deles
+            notify(data) {
+                this.observers.forEach(observer => observer(data));
+            }
+        }
+
+        // Funcional
+        const Observer = () => {
+            let observers = [];
+
+            const subscribe = (func) => {
+                observers.push(func);
+            }
+
+            const unsubscribe = (func) => {
+                observers = observers.filter(subscriber => subscriber !== func);
+            }
+
+            const notify = (data) => {
+                observers.forEach(observer => observer(data));
+            }
+
+            return {
+                subscribe,
+                unsubscribe,
+                notify
+            }
+        }
+
+        let cat = document.querySelector('#cat');
+        let span = document.querySelector('#cat_id');
+        let questoes = document.querySelector('#quest')
+
+        //ação do observer
+        const categorias = document.getElementById('cat');
+        //const valor = categorias.options[categorias.selectedIndex].value;
+
+
+        //Instancia o objecto
+        const observer = Observer();
+
+        cat.addEventListener('change', function (e) {
+            e.preventDefault();
+            observer.subscribe(categorias);
+        });
+
+        cat.addEventListener('change', function (e) {
+            e.preventDefault();
+            observer.notify(span.innerText = categorias.options[categorias.selectedIndex].value);
+           
+        });
+    </script>
+
+</body>
+
+</html>

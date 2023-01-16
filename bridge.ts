@@ -1,5 +1,18 @@
-# Padrao_Estrutura
- O padrão Bridge desacopla uma abstração da sua implementação para que as duas possam funcionar independentemente.
+import { Activity } from './models/Activity';
+import { ActivityApiService } from './services/ActivityApiService';
+import { ActivityService } from './services/ActivityService';
+
+// Cliente
+const url = 'https://arquitectura-url1.herokuapp.com/deploy-atividade';
+const apiService = new ActivityApiService(url);
+const activityService = new ActivityService(apiService);
+
+//Ideia será receber como parametros da View configuracao-atividade.html os campos necessários para o construtor de forma criar a Atividade
+activityService.addNewActivity({ activityId: 2,  InviraRAStID: 221, categorias: 'example',questoes:['questao 1','questao 2','questao 3','questao 4','questao 5'],questoescert:['questao 1'],
+questoeserr:['questao 2','questao 3','questao 4','questao 5'],questoesfeed:['Exemplo feedback1','Exemplo feedback 2','Exemplo feedback 3'] } as Activity);
+
+//Padrão Bridge
+/*O padrão Bridge desacopla uma abstração da sua implementação para que as duas possam funcionar independentemente.
 
 Abstração (interface) é uma camada de controle de alto nível para alguma entidade e delega o trabalho para a camada de implementação (plataforma). A Abstração contém uma referência à Implementação por meio de uma propriedade na classe.
 
@@ -15,8 +28,4 @@ A Abstração é representada pela classe ActivityService.ts localizada em ./ser
 A Abstração Refinada é representada pela classe ApService.ts localizada em ./services/ApService.ts
 O Implementador está representado pela classe IActivityService.ts localizada em ./models/IActivityService.ts
 O Implementador Concreto está representado pela classe ActivityApiService.ts localizada em ./services/ActivityApiService.ts
-
-Escolhi a implementação deste padrão porque a sua implementação funciona na criação da atividade. No entanto uma vez que na implementação inicial estou a utilizar o Node.js e o Express.js e este último por exemplo já implementa alguns padrões de estrutura como por exemplo o Proxy(muito utilizado para fazer verificação de autenticação de utilizadores com um Midleware). Será necessário um refactoring para que fique totalmente funcional não só utilizando o typescrypt mas com a framework Express.js.
-
-#Diagramas
-Diagramas de componente e de sequência do AP encontram-se na pasta Diagramas do repositório.
+*/
