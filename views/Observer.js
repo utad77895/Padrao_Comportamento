@@ -1,5 +1,5 @@
 class Observer {
-    // Gets called by the Subject::notify method.
+    // Faz o update do estado quando notificado.
     update() {}
   }
  

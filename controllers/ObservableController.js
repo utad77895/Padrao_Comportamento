@@ -15,7 +15,7 @@ class ObservableController {
       }
     }
  
-    get modelHeading() {
+    get modelCat() {
       return this.model.cat;
     }
  

@@ -449,7 +449,7 @@
         /*Fecha o Responsivo*/
     </style>
 
-    <!--Implementação do padrão de comportamento OBserver para criar Reaciviade na página de Configuração-->
+    <!--Implementação do padrão de comportamento Observer para criar Reactividade na página de Configuração-->
     <script>
         // classe observer
         class Observable {
@@ -460,20 +460,17 @@
                 this.observers = [];
             }
 
-            // adicione a capacidade de inscrever um novo objeto / Elemento DOM
-            // essencialmente, adicione algo ao array de observadores
+            // adicione a capacidade de inscrever um novo objeto / Elemento DOM e adiciona algo ao array de observadores
             subscribe(f) {
                 this.observers.push(f);
             }
 
-            // adicione a capacidade de cancelar a inscrição de um objeto em particular
-            // essencilamente, remove algum item do array de observadores
+            // adiciona a capacidade de cancelar a inscrição de um objeto em particular e remove algum item do array de observadores
             unsubscribe(f) {
                 this.observers = this.observers.filter(subscriber => subscriber !== f);
             }
 
-            // atualiza todos os objetos inscritos / Elementos DOM
-            // e passa alguns dados para cada um deles
+            // atualiza todos os objetos inscritos / Elementos DOM e passa alguns dados para cada um deles
             notify(data) {
                 this.observers.forEach(observer => observer(data));
             }
@@ -518,7 +515,7 @@
             e.preventDefault();
             observer.subscribe(categorias);
         });
-
+        //notifica os observer da alteração de estado
         cat.addEventListener('change', function (e) {
             e.preventDefault();
             observer.notify(span.innerText = categorias.options[categorias.selectedIndex].value);

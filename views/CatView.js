@@ -1,5 +1,6 @@
-import Observer from "../views/Observerobserver";
-
+import Observer from "../views/Observer";
+//falta implementar para os restantes elementos do formulário do ficheiro configuracao-atividade.html exemplo ilustrativo
+//Esta implemntação deverá alterar os elementos do DOM que subscreveram o evento change da lista de categorias
 class CatView extends Observer {
   constructor(controller) {
     super();

@@ -1,22 +1,21 @@
-# Padrao_Estrutura
- O padrão Bridge desacopla uma abstração da sua implementação para que as duas possam funcionar independentemente.
+# Padrao_Comportamento
+ O padrão Observer define uma dependência um-para-muitos entre objetos para que, quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente.
 
-Abstração (interface) é uma camada de controle de alto nível para alguma entidade e delega o trabalho para a camada de implementação (plataforma). A Abstração contém uma referência à Implementação por meio de uma propriedade na classe.
+Sujeito/Subject - conhece os seus observadores. Qualquer número de objetos Observer pode observar um sujeito. Deve fornecer uma interface para anexar e desanexar objetos Observer.
 
-Cliente – ​​solicita uma operação chamando a interface Abstração
-Abstração – declara uma interface para abstração de primeiro nível e mantém uma referência ao Implementador
-Abstração refinada – implementa e estende a interface definida por Abstração
-Implementador – abstração do implementador de primeiro nível
-Implementador Concreto – implementa a interface Implementador
+Observador/Observer - define uma interface de atualização para objetos que devem ser notificados sobre mudanças de um determinado sujeito.
 
-Neste exemplo como exemplo de config View temos a configuracao-ativiade.html
-A simular o cliente do Padrão para criar a atividade temos o bridge.ts
-A Abstração é representada pela classe ActivityService.ts localizada em ./services/ActivityService.ts
-A Abstração Refinada é representada pela classe ApService.ts localizada em ./services/ApService.ts
-O Implementador está representado pela classe IActivityService.ts localizada em ./models/IActivityService.ts
-O Implementador Concreto está representado pela classe ActivityApiService.ts localizada em ./services/ActivityApiService.ts
+Sujeito Concreto/ConcreteSubject - armazena o estado dos objetos ConcreteObserver e Noifica os seus observadores quando seu estado muda.
+Observador Concreto/ConcreteObserver - mantém uma referência a um objeto ConcreteSubject, armazena o estado que deve permanecer consistente com o do sujeito e implementa a interface de atualização do Observer para manter seu estado consistente com o do sujeito/Subject.
 
-Escolhi a implementação deste padrão porque a sua implementação funciona na criação da atividade. No entanto uma vez que na implementação inicial estou a utilizar o Node.js e o Express.js e este último por exemplo já implementa alguns padrões de estrutura como por exemplo o Proxy(muito utilizado para fazer verificação de autenticação de utilizadores com um Midleware). Será necessário um refactoring para que fique totalmente funcional não só utilizando o typescrypt mas com a framework Express.js.
+Neste meu projeto apliquei o padrão Observer na config View representada pela página configuracao-ativiade.html, tornando desta forma reactiva.
+A simular o Subject temos a classe Observable.js localizada em  ./models/Observable.js
+A representar o Observer/Observador a classe Observer,js localizada em .views/Observer.js
+A representar o Sujeito Concreto/ConcreteSubject implementei a classe CatView.js localizada em .views/CatView.js, que notifica os observadores sobre a alteração de estado e seria importada para a página configuracao-atividade.html para efetivamente alterando o estado dos elementos do DOM.
+A representar o Observador Concreto/ConcreteObserver implementei a classe ObservableController.js localizada em .controllers/ObservableController.js 
+
+Escolhi a implementação deste padrão porque pretendia adicionar reactividade à página de configuração da atividade. No entanto uma vez que na implementação inicial estou a utilizar o Node.js e o express.js e por exemplo o Node.js já utiliza o padrão Observer com a classe EventEmitter que permite criar várias funções listeners para registar eventos. Achei por bem fazer uma implementação em javascript puro só para fins demonstrativos, deixando a implementação com Node.js para o refactoring do projecto.
+Para mostrar a reactividade na página html configuracao-atividade.html, fiz uma implementação com métodos javascript para mostrar a reactividade no DOM da página, ou seja sempre que o estado da categoria for alterado por exemplo para "Turismo" essa alteração será subscrita por outros elementos da página. Neste caso será um elemento de span que adicionar a categoria "Turismo" no elemento textarea das questões. 
 
 #Diagramas
-Diagramas de componente e de sequência do AP encontram-se na pasta Diagramas do repositório.
+Diagramas de componente e de sequência do componente encontram-se na pasta Diagramas do repositório.
